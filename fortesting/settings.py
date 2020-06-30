@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from django.utils.translation import gettext, gettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -32,6 +33,7 @@ AUTH_USER_MODEL = 'UserApp.User'
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,12 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-     "djstripe",
+    'djstripe',
 
     'Payment',
     'Payment.OfflinePayment',
     'UserApp',
     'seri',
+    'tranmodel',
 ]
 
 STRIPE_LIVE_PUBLIC_KEY = "pk_test_51Gub1gL2bH2lrkSU04d5przzrDW4BubUkAgdQwGQ66aBB8ZkxqQDqOylM3WILRt0g378x6mrKfydjYrna5cTmzSb00MpAiGTAr"
@@ -118,7 +121,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
+LANGUAGES = (
+    ('ar', _('Arabic')),
+    ('en', _('English')),
+)
+MODELTRANSLATION_TRANSLATION_FILES = (
+    'tranmodel.translation',
+)
 
 TIME_ZONE = 'UTC'
 
