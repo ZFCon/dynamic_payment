@@ -39,12 +39,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+     "djstripe",
 
     'Payment',
     'Payment.OfflinePayment',
     'UserApp',
     'seri',
 ]
+
+STRIPE_LIVE_PUBLIC_KEY = "pk_test_51Gub1gL2bH2lrkSU04d5przzrDW4BubUkAgdQwGQ66aBB8ZkxqQDqOylM3WILRt0g378x6mrKfydjYrna5cTmzSb00MpAiGTAr"
+STRIPE_LIVE_SECRET_KEY = "sk_test_51Gub1gL2bH2lrkSUF3NadPXyQdRHv27GHRstTjqudTc7OtnDCX5iKURY54e9KrZlLMpL4ZOFCNM0OoBAlfN5UGTx007r35Ede2"
+STRIPE_TEST_PUBLIC_KEY = "pk_test_51Gub1gL2bH2lrkSU04d5przzrDW4BubUkAgdQwGQ66aBB8ZkxqQDqOylM3WILRt0g378x6mrKfydjYrna5cTmzSb00MpAiGTAr"
+STRIPE_TEST_SECRET_KEY = "sk_test_51Gub1gL2bH2lrkSUF3NadPXyQdRHv27GHRstTjqudTc7OtnDCX5iKURY54e9KrZlLMpL4ZOFCNM0OoBAlfN5UGTx007r35Ede2"
+STRIPE_LIVE_MODE = False
+DJSTRIPE_WEBHOOK_VALIDATION = 'retrieve_event'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
